@@ -100,7 +100,7 @@ function getLs (p1,p2) {
     addedStudentsList.innerHTML = '';
     if (localStorage.getItem('students') == true)
         addedStudentsArray = JSON.parse(localStorage.getItem('students'));
-    else {primeraVezJamesFranco();getLs();
+    else {primeraVezJamesFranco();getLs();}
 
     if (addedStudentsArray[p1][p2] != undefined){
         addedStudentsArray[p1][p2].forEach(element => {
@@ -128,7 +128,7 @@ addStudentForm.addEventListener('submit', (e) => {
     let studentBirthDate = $('#flatpickr').val();
     let students = new Student(studentId,names,lastNames,studentBirthDate,gender,0);
     studentsArray = JSON.parse(localStorage.getItem('students'));
-    studentsArray[$("#SelectedYear").prop('selectedIndex')][$('#SelectedSection').prop('selectedIndex')].push(students);
+    studentsArray[$("#SelectYear").prop('selectedIndex')][$('#SelectSection').prop('selectedIndex')].push(students);
     addStudentForm.reset();
     saveLs();
     getLs();
