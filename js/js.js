@@ -100,7 +100,7 @@ function getLs (p1,p2) {
     addedStudentsList.innerHTML = '';
     if (localStorage.getItem('students') == true)
         addedStudentsArray = JSON.parse(localStorage.getItem('students'));
-    else {primeraVezJamesFranco();getLs();}
+    else {primeraVezJamesFranco();getLs(0,0);}
 
     if (addedStudentsArray[p1][p2] != undefined){
         addedStudentsArray[p1][p2].forEach(element => {
